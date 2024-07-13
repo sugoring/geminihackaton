@@ -13,7 +13,10 @@ exports.sayHello = onRequest(
 
             const prompt = "Write a story about a magic backpack.";
 
-          // 나머지 코드 여기에 추가
+            const result = await model.generateContent(prompt);
+            const response = await result.response;
+            const text = await response.text();
+            res.status(200).send(text);
           },
       );
     },
