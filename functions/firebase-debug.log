@@ -441,3 +441,122 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 
 [debug] [2024-07-13T13:00:14.639Z] Got response from /__/functions.yaml {"endpoints":{"analyzeImage":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"analyzeImage"}},"specVersion":"v1alpha1","requiredAPIs":[]}
 [info] +  functions: Loaded functions definitions from source: analyzeImage. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: analyzeImage."}}
+[debug] [2024-07-13T13:00:36.539Z] File C:\Users\User\Desktop\workspace\geminihackaton\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\User\\Desktop\\workspace\\geminihackaton\\functions\\index.js changed, reloading triggers"}}
+[debug] [2024-07-13T13:00:37.554Z] Validating nodejs source
+[debug] [2024-07-13T13:00:40.047Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@google/generative-ai": "^0.14.1",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0",
+    "sharp": "^0.33.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-07-13T13:00:40.047Z] Building nodejs source
+[debug] [2024-07-13T13:00:40.048Z] Failed to find version of module node: reached end of search path C:\Users\User\Desktop\workspace\geminihackaton\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-07-13T13:00:40.051Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-07-13T13:00:40.060Z] Found firebase-functions binary at 'C:\Users\User\Desktop\workspace\geminihackaton\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8027
+
+[debug] [2024-07-13T13:00:41.078Z] Got response from /__/functions.yaml {"endpoints":{"analyzeImage":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"analyzeImage"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: analyzeImage. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: analyzeImage."}}
+[debug] [2024-07-13T13:00:52.893Z] File C:\Users\User\Desktop\workspace\geminihackaton\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\User\\Desktop\\workspace\\geminihackaton\\functions\\index.js changed, reloading triggers"}}
+[debug] [2024-07-13T13:00:53.901Z] Validating nodejs source
+[debug] [2024-07-13T13:00:56.259Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@google/generative-ai": "^0.14.1",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0",
+    "sharp": "^0.33.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-07-13T13:00:56.260Z] Building nodejs source
+[debug] [2024-07-13T13:00:56.260Z] Failed to find version of module node: reached end of search path C:\Users\User\Desktop\workspace\geminihackaton\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-07-13T13:00:56.266Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-07-13T13:00:56.280Z] Found firebase-functions binary at 'C:\Users\User\Desktop\workspace\geminihackaton\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8599
+
+[debug] [2024-07-13T13:00:57.121Z] Got response from /__/functions.yaml {"endpoints":{"analyzeImage":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"analyzeImage"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: analyzeImage. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: analyzeImage."}}
+[debug] [2024-07-13T13:01:02.746Z] File C:\Users\User\Desktop\workspace\geminihackaton\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\User\\Desktop\\workspace\\geminihackaton\\functions\\index.js changed, reloading triggers"}}
+[debug] [2024-07-13T13:01:03.761Z] Validating nodejs source
+[debug] [2024-07-13T13:01:06.398Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@google/generative-ai": "^0.14.1",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0",
+    "sharp": "^0.33.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-07-13T13:01:06.401Z] Building nodejs source
+[debug] [2024-07-13T13:01:06.401Z] Failed to find version of module node: reached end of search path C:\Users\User\Desktop\workspace\geminihackaton\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-07-13T13:01:06.407Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-07-13T13:01:06.424Z] Found firebase-functions binary at 'C:\Users\User\Desktop\workspace\geminihackaton\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8606
+
+[debug] [2024-07-13T13:01:07.353Z] Got response from /__/functions.yaml {"endpoints":{"analyzeImage":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"analyzeImage"}},"specVersion":"v1alpha1","requiredAPIs":[]}

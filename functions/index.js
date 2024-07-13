@@ -1,6 +1,7 @@
 const { onRequest } = require("firebase-functions/v2/https");
 const { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } = require("@google/generative-ai");
 const sharp = require('sharp'); // Import sharp for image processing
+
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 exports.analyzeImage = onRequest({ cors: true }, async (req, res) => {
   try {
@@ -42,6 +43,7 @@ exports.analyzeImage = onRequest({ cors: true }, async (req, res) => {
       
       By clearly instructing the AI to avoid additional commentary and focus on a straightforward score and reason, the responses should become more direct and aligned with your requirements.`;
 
+
       const model = genAI.getGenerativeModel({
           model: 'gemini-1.5-flash',
           safetySetting: [
@@ -54,7 +56,13 @@ exports.analyzeImage = onRequest({ cors: true }, async (req, res) => {
           generationConfig: { responseMimeType: "application/json" }
       });
 
-      // 나머지 코드 여기에 추가
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      const text = await response.text();
+      
+      // Return the structured response
+      res.status(200).json(text);
+
   } catch (error) {
       console.error("Error analyzing image:", error);
       console.log("Error analyzing image:", error);
