@@ -1,4 +1,4 @@
-import './App.css';
+import '@/App.css';
 
 import axios from 'axios';
 import React, { useState } from 'react';
@@ -7,12 +7,12 @@ function App() {
     const [image, setImage] = useState(null);
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState(null);
-    const [error, setError] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
 
     const handleImageChange = (event) => {
         setImage(event.target.files[0]);
         setResult(null);
-        setError(null);
+        setErrorMessage(null);
     };
 
     const handleAnalyze = async () => {
@@ -34,9 +34,9 @@ function App() {
             );
 
             setResult(response.data);
-        } catch (error) {
-            console.error('Error:', error);
-            setError(`An error occurred while analyzing the image: ${  error.message}`);
+        } catch (err) {
+            console.error('Error:', err);
+            setErrorMessage(`An error occurred while analyzing the image: ${  err.message}`);
         } finally {
             setLoading(false);
         }
@@ -57,7 +57,7 @@ function App() {
                     <p>Reason: {result.reason}</p>
                 </div>
             )}
-            {error && <div id="result">{error}</div>}
+            {errorMessage && <div id="result">{errorMessage}</div>}
         </div>
     );
 }
