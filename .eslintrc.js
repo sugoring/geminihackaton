@@ -39,7 +39,7 @@ module.exports = {
       },
     ],
   },
-  ignorePatterns: ['**/build/**/*', '.eslintrc.js', 'craco.config.js'],
+  ignorePatterns: ['**/build/**/*', '.eslintrc.js', 'craco.config.js', 'functions'],
   settings: {
     'import/resolver': {
       alias: {
