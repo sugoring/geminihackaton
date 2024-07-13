@@ -46,7 +46,41 @@ exports.analyzeImage = onRequest({ cors: true }, async (req, res) => {
         const tempFilePath = path.join(os.tmpdir(), `image_${Date.now()}.jpg`);
         fs.writeFileSync(tempFilePath, processedImageBuffer);
 
-        // 나머지 코드 여기에 추가
+        function fileToGenerativePart(path, mimeType) {
+          return {
+            inlineData: {
+              data: Buffer.from(fs.readFileSync(path)).toString("base64"),
+              mimeType
+            },
+          };
+        }
+        
+        const filePart1 = fileToGenerativePart(tempFilePath, "image/jpeg")
+        const imageParts = [filePart1];
+
+        const prompt = `Instruction... (생략)`;
+
+        const model = genAI.getGenerativeModel({
+          model: 'gemini-1.5-flash',
+          safetySetting: [
+            { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+            { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+            { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
+            { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
+            { category: HarmCategory.HARM_CATEGORY_UNSPECIFIED, threshold: HarmBlockThreshold.BLOCK_NONE },
+          ],
+          generationConfig: { responseMimeType: "application/json" }
+        });
+
+        const result = await model.generateContent([prompt, ...imageParts]);
+        const response = await result.response;
+        const text = response.text();
+        
+        fs.unlinkSync(tempFilePath);
+
+        console.log(text)
+
+        res.status(200).json(JSON.parse(text));
       } catch (error) {
         console.error("Error analyzing image:", error);
         res.status(500).json({ error: "Internal Server Error" });
